@@ -11,7 +11,16 @@
   <title>Etch-a-Sketch</title>
 </head>
 <body>
-  <h1 class="title">Etch-a-Sketch</h1>
+  <header class="header">
+    <h1 class="title">Etch-a-Sketch</h1>
+    <div class="btn-container">
+      <button class="btn" onclick="smartNow()">Smart Now</button>
+    </div>
+    <div class="btn-container">
+      <button class="btn no-show" id="stopSmart" onclick="smartStop()">Smart
+        Stop</button>
+    </div>
+  </header>
   <div id="container" class="container">
     
   </div>

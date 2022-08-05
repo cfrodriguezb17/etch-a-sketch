@@ -1,18 +1,50 @@
 body {
   font-family: 'Mouse Memoirs', sans-serif;
 }
+.header {
+  display: flex;
+  align-items: center;
+  column-gap: 18px;
+}
+h1 {
+  margin: 4px 0;
+}
+.btn {
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.btn:active {
+  background-color: black;
+  color: white;
+}
+.no-show {
+  display: none;
+}
 .container {
+  width: fit-content;
+  padding: 4px;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
   gap: 4px 4px;
+  border: 20px solid red;
+  border-radius: 10px;
 }
 .box {
   width: 48px;
   height: 48px;
-  background-color: red;
+  background-color: grey;
 }
 .box:hover {
-  background-color: grey;
+  background-color: black;
+}
+.box-black {
+  background-color: black;
+}
+.smart {
+  background-color: black;
 }
 
