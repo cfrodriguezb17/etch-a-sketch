@@ -1,5 +1,5 @@
 let container = document.querySelector('#container');
-let stopSmart = document.querySelector('#stopSmart');
+let buttonStart = document.querySelector('#buttonStart'); 
 let working = false;
 let work = () => working ? working = false : working = true;
 let addBox = () => {
@@ -7,15 +7,23 @@ let addBox = () => {
   box.classList.add('box');
   container.appendChild(box);
 }
-let printMapLine = () => {
-  for(i = 0; i < 16; i++){
+let printMapLine = (x) => {
+  for(i = 0; i < x; i++){
     addBox();
   }
 }
-let printMap = () => {
-  for(j = 0; j < 16; j++){
-    printMapLine();
+let printMap = (x = 16, y = 16) => {
+  for(j = 0; j < y; j++){
+    printMapLine(x);
   }
+}
+let selectGrid = () => {
+  container.innerHTML = '';
+  let x = Number(prompt('How many rows do you want?'));
+  let y = Number(prompt('How many columns do you want?'));
+  container.style.cssText = `grid-template-columns: repeat(${y}, 1fr);
+  grid-template-rows: repeat(${x}, 1fr);`;
+  printMap(x, y);
 }
 let drawing = () => {
   container.addEventListener('mouseover', (event) => {
@@ -28,14 +36,16 @@ let drawing = () => {
 }
 let smartStop = () => {
   work();
-  stopSmart.classList.toggle('no-show');
 }
 let smartNow = () => {
   smartStop();
+  if(buttonStart.textContent == 'Smart Now'){
+    buttonStart.textContent = 'Smart Stop';
+  }else{
+    buttonStart.textContent = 'Smart Now';
+  }
   if(working == true){
     drawing();
-  }else{
-    console.log('stop please!');
   }
 }
 printMap();

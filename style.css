@@ -24,18 +24,16 @@ h1 {
   display: none;
 }
 .container {
-  width: fit-content;
+  max-width: 960px;
+  max-height: 960px;
   padding: 4px;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
-  gap: 4px 4px;
   border: 20px solid red;
   border-radius: 10px;
 }
 .box {
-  width: 48px;
-  height: 48px;
   background-color: grey;
 }
 .box:hover {
