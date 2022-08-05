@@ -20,10 +20,15 @@ h1 {
   background-color: black;
   color: white;
 }
+.btn_reset {
+  background-color: #e84118;
+  color: #fff;
+}
 .no-show {
   display: none;
 }
 .container {
+  width: fit-content;
   max-width: 960px;
   max-height: 960px;
   padding: 4px;
@@ -35,6 +40,8 @@ h1 {
 }
 .box {
   background-color: grey;
+  width: 48px;
+  height: 48px;
 }
 .box:hover {
   background-color: black;
